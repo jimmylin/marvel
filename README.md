@@ -8,7 +8,7 @@ This code was based off of a tutorial that can be found here: https://github.com
 
 Here is the youtube video: https://www.youtube.com/watch?v=ehQig94h4Ms
 
-To use the Marvel API (http://developer.marvel.com/) you need to create an account and get you public key and your private key and enter those in to src/lambda.js where <marvel private key> and <marvel api key> are.
+To use the Marvel API (http://developer.marvel.com/) you need to create an account and get you public key and your private key and enter those in to src/lambda.js where \<marvel private key\> and \<marvel api key\> are.
 You use the intentSchema.js, HeroesSlotType, and SampleUtterances files to set up your Alexa skill.  
 
 Have fun!!
