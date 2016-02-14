@@ -1,4 +1,4 @@
-(./img/marvel.jpg)
+(https://github.com/jimmylin/marvel/blob/master/img/marvel.jpg)
 
 # marvel
 Description: AWS Alexa skill that queries the Marvel api for a character and reads you the description of the character.
