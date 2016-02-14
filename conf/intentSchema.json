@@ -1,0 +1,16 @@
+{  
+"intents": [
+    {
+      "intent": "getHeroIntent",
+      "slots": [
+        {
+          "name": "Hero",
+          "type": "HEROES"
+        }
+      ]
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    }
+  ]
+}

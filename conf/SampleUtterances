@@ -1,0 +1,6 @@
+getHeroIntent tell me about {Hero}
+getHeroIntent what about {Hero}
+getHeroIntent what do you know about {Hero}
+getHeroIntent who is {Hero}
+getHeroIntent info {Hero}
+getHeroIntent {Hero}
