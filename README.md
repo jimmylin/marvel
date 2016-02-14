@@ -1,4 +1,4 @@
-(https://github.com/jimmylin/marvel/blob/master/img/marvel.jpg)
+![alt text](https://github.com/jimmylin/marvel/blob/master/img/marvel.jpg "Marvel Logo")
 
 # marvel
 Description: AWS Alexa skill that queries the Marvel api for a character and reads you the description of the character.
