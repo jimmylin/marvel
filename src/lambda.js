@@ -196,14 +196,12 @@ function buildResponse(sessionAttributes, speechletResponse) {
     };
 }
 
-
-// Don't use demo key in production. Get a key from https://api.nasa.gov/index.html#apply-for-an-api-key
 function getHeroFromMarvel(hero, callback) {
     var PRIV_KEY = "<marvel private key>";
     var API_KEY = "<marvel api key>";
     var ts = new Date().getTime();
     var hash = crypto.createHash('md5').update(ts + PRIV_KEY + API_KEY).digest('hex');
-    var pathurl = '/v1/public/characters?name=' + encodeURIComponent(hero);
+    var pathurl = '/v1/public/characters?name=' + encodeURIComponent(hero) + "&apikey=" + API_KEY;
     pathurl += "&ts="+ts+"&hash="+hash;
     console.log(pathurl);
   return http.get({
