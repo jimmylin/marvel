@@ -1,6 +1,4 @@
-getHeroIntent tell me about {Hero}
-getHeroIntent what about {Hero}
-getHeroIntent what do you know about {Hero}
-getHeroIntent who is {Hero}
-getHeroIntent info {Hero}
-getHeroIntent {Hero}
+MyIntent about {Hero}
+MyIntent who is {Hero}
+MyIntent to describe {Hero}
+MyIntent to tell me about {Hero}

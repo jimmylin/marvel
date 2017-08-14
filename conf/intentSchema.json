@@ -1,16 +1,22 @@
-{  
-"intents": [
+{
+  "intents": [
     {
-      "intent": "getHeroIntent",
       "slots": [
         {
           "name": "Hero",
-          "type": "HEROES"
+          "type": "LIST_OF_HEROES"
         }
-      ]
+      ],
+      "intent": "MyIntent"
     },
     {
       "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
     }
   ]
 }
