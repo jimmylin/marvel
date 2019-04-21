@@ -21,40 +21,40 @@ const MarvelIntentHandler = {
             && handlerInput.requestEnvelope.request.intent.name === 'MarvelIntent';
     },
     async handle(handlerInput) {
-    let outputSpeech = 'I did not find what you were looking for.  This is the default message.';
-    const comicvine_apikey = 'e72bec75197be651d2df51878b17f23ea92724fd';
-    let characterName = handlerInput.requestEnvelope.request.intent.slots.character.value.toLowerCase();
-    console.log("Going to ask about: <<" + characterName + ">>");
+        let outputSpeech = 'I did not find what you were looking for.  This is the default message.';
+        const comicvine_apikey = 'e72bec75197be651d2df51878b17f23ea92724fd';
+        let characterName = handlerInput.requestEnvelope.request.intent.slots.character.value.toLowerCase();
+        console.log("Going to ask about: <<" + characterName + ">>");
     
-    const options = {
-        host: 'comicvine.gamespot.com',
-        port: 443,
-        path: '/api/search/?api_key=' + comicvine_apikey + '&field_list=count_of_issue_appearances,deck,image&resources=character&format=json&query=' + encodeURIComponent(characterName),
-        method: 'GET',
-        headers: {
-          'User-Agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36'
-        },
-    };
+        const options = {
+            host: 'comicvine.gamespot.com',
+            port: 443,
+            path: '/api/search/?api_key=' + comicvine_apikey + '&field_list=count_of_issue_appearances,deck,image&resources=character&format=json&query=' + encodeURIComponent(characterName),
+            method: 'GET',
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36'
+            },
+        };
 
-    await getRemoteData(options)
-      .then((response) => {
-        const data = JSON.parse(response);
-        //console.log(data);
-        if ((data.results.length > 0) && (data.results[0].deck !== null)) {
-          outputSpeech = `${data.results[0].deck}`;
-        } else {
-          outputSpeech = `I did not find any characters with the name of ${characterName}`;
-        }
-      })
-      .catch((err) => {
-        //set an optional error message here
-        outputSpeech = err.message;
-      });
+        await getRemoteData(options)
+        .then((response) => {
+            const data = JSON.parse(response);
+            //console.log(data);
+            if ((data.results.length > 0) && (data.results[0].deck !== null)) {
+                outputSpeech = `${data.results[0].deck}`;
+            } else {
+                outputSpeech = `I did not find any characters with the name of ${characterName}`;
+            }
+        })
+        .catch((err) => {
+            //set an optional error message here
+            outputSpeech = err.message;
+        });
         
-    return handlerInput.responseBuilder
-      .speak(outputSpeech)
-      //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
-      .getResponse();
+        return handlerInput.responseBuilder
+        .speak(outputSpeech)
+        //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
+        .getResponse();
     }
 };
 const HelpIntentHandler = {
