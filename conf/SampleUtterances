@@ -1,4 +1,3 @@
-MyIntent about {Hero}
-MyIntent who is {Hero}
-MyIntent to describe {Hero}
-MyIntent to tell me about {Hero}
+describe {character}
+tell me about {character}
+who is {character}
