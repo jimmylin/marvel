@@ -22,7 +22,7 @@ const MarvelIntentHandler = {
     },
     async handle(handlerInput) {
         let outputSpeech = 'I did not find what you were looking for.  This is the default message.';
-        const comicvine_apikey = 'e72bec75197be651d2df51878b17f23ea92724fd';
+        const comicvine_apikey = '<<APIKEY>>';
         let characterName = handlerInput.requestEnvelope.request.intent.slots.character.value.toLowerCase();
         console.log("Going to ask about: <<" + characterName + ">>");
     
